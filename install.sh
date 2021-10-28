@@ -342,8 +342,8 @@ sudo service retropie-status-overlay start
 echo "Add overlay toggle script to retropiemenu?"
 read -p "[y]es or [N]o: " TOGGLE
 if [[ $TOGGLE = [yY] ]] ; then
-  cp $SCRIPTPATH"/toggle status overlay.sh" ~/RetroPie/retropiemenu
-  cd ~/RetroPie/retropiemenu
+  cp $SCRIPTPATH"/toggle status overlay.sh" /home/pi/RetroPie/retropiemenu
+  cd /home/pi/RetroPie/retropiemenu
   chmod +x toggle\ status\ overlay.sh
 fi
 
