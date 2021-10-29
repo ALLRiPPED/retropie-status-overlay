@@ -14,7 +14,7 @@ UNDERLINE='\033[4m'
 echo
 echo "Updating Dependencies..."
 echo
-git pull > /dev/null 2>&1
+git pull
 
 echo ""
 echo "--------------------------------------------------"
