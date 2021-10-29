@@ -32,6 +32,8 @@ service retropie-status-overlay stop
 
 systemctl disable retropie-status-overlay
 rm /lib/systemd/system/retropie-status-overlay.service
+rm /home/pi/RetroPie/retropiemenu/retropieoverlay.sh
+rm /home/pi/RetroPie/retropiemenu/icons/retropieoverlay.png
 
 echo
 echo "$SCRIPTPATH will be left in place, you are free to manually remove"
