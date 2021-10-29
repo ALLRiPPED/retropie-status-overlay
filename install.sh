@@ -347,7 +347,7 @@ if [[ $TOGGLE = [yY] ]] ; then
   chmod +x /home/pi/RetroPie/retropiemenu/retropieoverlay.sh
 CONTENT1="<game>\n<path>./retropieoverlay.sh</path>\n<name>\âœ­\âœ Retropie Overlay Settings \âœ­\âœ</name>\n<desc>Toggles Overlay Settings.</desc>\n<image>./icons/retropieoverlay.png</image>\n</game>"
 C1=$(echo $CONTENT1 | sed 's/\//\\\//g')
-if grep -q retropieoverlay.sh "/home/$currentuser/RetroPie/retropiemenu/gamelist.xml"; then # Check if menu entry is already there or not
+if grep -q retropieoverlay.sh "/home/pi/RetroPie/retropiemenu/gamelist.xml"; then # Check if menu entry is already there or not
 	echo "gamelist.xml entry confirmed"
 else
 	sed "/<\/gameList>/ s/.*/${C1}\n&/" /home/pi/RetroPie/retropiemenu/gamelist.xml > /home/pi/temp
