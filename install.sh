@@ -345,7 +345,15 @@ if [[ $TOGGLE = [yY] ]] ; then
   mv -f $SCRIPTPATH"/retropieoverlay.png" /home/pi/RetroPie/retropiemenu/icons
   cp $SCRIPTPATH"/retropieoverlay.sh" /home/pi/RetroPie/retropiemenu
   chmod +x /home/pi/RetroPie/retropiemenu/retropieoverlay.sh
-CONTENT1="<game>\n<path>./retropieoverlay.sh</path>\n<name>\✭\✭ Retropie Overlay Settings \✭\✭</name>\n<desc>Toggles Overlay Settings.</desc>\n<image>./icons/retropieoverlay.png</image>\n</game>"
+if [ ! -s /home/pi/RetroPie/retropiemenu/gamelist.xml ] # Remove gamelist.xml if file size is 0
+then
+	sudo rm -f /home/pi/RetroPie/retropiemenu/gamelist.xml
+fi
+if [ ! -f "/home/pi/RetroPie/retropiemenu/gamelist.xml" ]; # If file doesn't exist, copy gamelist.xml to folder
+then
+	cp /opt/retropie/configs/all/emulationstation/gamelists/retropie/gamelist.xml /home/pi/RetroPie/retropiemenu/gamelist.xml
+fi
+CONTENT1="<game>\n<path>./retropieoverlay.sh</path>\n<name>Retropie Overlay Settings</name>\n<desc>Toggles Overlay Settings.</desc>\n<image>./icons/retropieoverlay.png</image>\n</game>"
 C1=$(echo $CONTENT1 | sed 's/\//\\\//g')
 if grep -q retropieoverlay.sh "/home/pi/RetroPie/retropiemenu/gamelist.xml"; then # Check if menu entry is already there or not
 	echo "gamelist.xml entry confirmed"
