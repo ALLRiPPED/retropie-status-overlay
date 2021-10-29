@@ -342,7 +342,7 @@ sudo service retropie-status-overlay start
 echo "Add retropie overlay settings script to retropiemenu?"
 read -p "[y]es or [N]o: " TOGGLE
 if [[ $TOGGLE = [yY] ]] ; then
-  mv -f $SCRIPTPATH"/retropieoverlay.png" /home/pi/RetroPie/retropiemenu/icons
+  cp $SCRIPTPATH"/retropieoverlay.png" /home/pi/RetroPie/retropiemenu/icons
   cp $SCRIPTPATH"/retropieoverlay.sh" /home/pi/RetroPie/retropiemenu
   chmod +x /home/pi/RetroPie/retropiemenu/retropieoverlay.sh
 if [ ! -s /home/pi/RetroPie/retropiemenu/gamelist.xml ] # Remove gamelist.xml if file size is 0
