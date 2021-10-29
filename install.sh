@@ -19,24 +19,6 @@ echo -e "${NONE}"
 echo "--------------------------------------------------"
 echo "Press ENTER to proceed or CTRL+C to abort"
 echo "--------------------------------------------------"
-read -r _
-
-echo "Default config.ini assumes Carbon theme at 1080p."
-read -p "Use [D]efault config values or [b]uild from scratch? " CONFIG
-if [[ $CONFIG = [bB] ]] ; then
-  echo ""
-  echo -e "${CYAN}"
-  echo "Building config file..."
-  echo -e "${NONE}"
-  echo "--------------------------------------------------"
-  echo -n "" > config.ini
-  echo "# Created using install.sh" >> config.ini
-  echo "" >> config.ini
-
-  echo "[Icons]" >> config.ini 
-  echo "# Icon Size: 24, 36 or 48" >> config.ini
-  while [[ $PIXEL != "24" && $PIXEL != "36" && $PIXEL != "48" ]]
-  do
     echo "Choose icon size. 36px or lower recommened for low res screens."
     read -p "24/36/48 [48]: " PIXEL
     if [[ $PIXEL = "" ]] ; then
