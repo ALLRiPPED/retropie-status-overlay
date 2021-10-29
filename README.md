@@ -38,7 +38,7 @@ SSH into your device, or access the terminal using F4.
 Run RetroPie Status Overlay
 ```bash
 cd ~
-git clone https://github.com/bverc/retropie-status-overlay
+git clone https://github.com/ALLRiPPED/retropie-status-overlay
 cd retropie-status-overlay
 sudo bash install.sh
 ```
@@ -76,7 +76,7 @@ sudo apt-get install python3-psutil
 Download the code:
 ```bash
 cd ~/src
-git clone https://github.com/bverc/retropie-status-overlay
+git clone https://github.com/ALLRiPPED/retropie-status-overlay
 cd retropie-status-overlay
 cp config.ini.example config.ini
 ```
