@@ -353,7 +353,7 @@ if [ ! -f "/home/pi/RetroPie/retropiemenu/gamelist.xml" ]; # If file doesn't exi
 then
 	cp /opt/retropie/configs/all/emulationstation/gamelists/retropie/gamelist.xml /home/pi/RetroPie/retropiemenu/gamelist.xml
 fi
-CONTENT1="<game>\n<path>./retropieoverlay.sh</path>\n<name>Retropie Overlay Settings</name>\n<desc>Toggles Overlay Settings.</desc>\n<image>./icons/retropieoverlay.png</image>\n</game>"
+CONTENT1="\t<game>\n\t\t<path>./retropieoverlay.sh</path>\n\t\t<name>Retropie Overlay Settings</name>\n\t\t<desc>Toggles Overlay Settings.</desc>\n\t\t<image>./icons/retropieoverlay.png</image>\n\t</game>"
 C1=$(echo $CONTENT1 | sed 's/\//\\\//g')
 if grep -q retropieoverlay.sh "/home/pi/RetroPie/retropiemenu/gamelist.xml"; then # Check if menu entry is already there or not
 	echo "gamelist.xml entry confirmed"
